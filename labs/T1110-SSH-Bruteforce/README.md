@@ -1,5 +1,9 @@
 # T1110 - SSH Brute Force Detection Lab
 
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE-T1110-red)
+![Wazuh](https://img.shields.io/badge/Wazuh-4.x-blue)
+![Status](https://img.shields.io/badge/Status-In_Progress-green)
+
 ## Executive Summary
 
 This lab demonstrates how an SSH brute force attack can be simulated, detected, and analyzed using Wazuh.  
