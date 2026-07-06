@@ -12,7 +12,7 @@ This attack is used to generate authentication failure events that can be collec
 |---|---|
 | Attacker | Kali Linux |
 | Target | Ubuntu 24.04 SSH Server |
-| Target IP | <Ubuntu-Server-IP> |
+| Target IP | Ubuntu-Server-IP |
 | Target User | soclab |
 | Attack Tool | Hydra |
 | Technique | SSH Password Guessing |
