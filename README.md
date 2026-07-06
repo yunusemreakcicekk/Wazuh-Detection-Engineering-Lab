@@ -26,22 +26,29 @@ produced and adds a short, human-readable explanation on top.
 
 ## Architecture
 
-```text
-Attacker Machine
-      |
-  Simulated Attack (e.g. Hydra SSH brute force)
-      |
-Target Host (logs: auth.log / sshd)
-      |
-Wazuh Agent -> Wazuh Manager
-      |
-Custom Detection Rule (custom-rules/)
-      |
-Wazuh Alert (JSON)
-      |
-AI-Assisted Analysis (ai-assistant/) [optional]
-      |
-Incident Summary
+```mermaid
+flowchart TD
+    A[Kali Linux<br/>Hydra Attack] -->|SSH Password Guessing| B[Ubuntu 24.04<br/>OpenSSH Server]
+
+    B -->|Authentication Logs| C[Wazuh Agent / Log Collection]
+
+    C -->|Forwarded Events| D[Wazuh Manager]
+
+    D --> E[Default SSH Rules<br/>Rule 5760]
+
+    E --> F[Custom Correlation Rule<br/>Rule 100200<br/>frequency=3 timeframe=60]
+
+    F --> G[MITRE ATT&CK Mapping<br/>T1110.001 Password Guessing]
+
+    F --> H[Wazuh Dashboard<br/>Security Alert]
+
+    F --> I[Alert JSON]
+
+    I --> J[Python Alert Parser]
+
+    J --> K[Airia AI API<br/>AI-Assisted Triage]
+
+    K --> L[Incident Summary<br/>MITRE Context<br/>Recommended Actions]
 ```
 
 See [`architecture/`](architecture/) for diagrams and [`screenshots/`](screenshots/)
