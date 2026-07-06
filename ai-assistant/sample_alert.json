@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-07-06T10:15:32.000+0000",
+  "rule": {
+    "id": "100200",
+    "level": 12,
+    "description": "Custom Detection: SSH Brute Force Attack Detected",
+    "mitre": {
+      "id": ["T1110.001"],
+      "tactic": ["Credential Access"],
+      "technique": ["Password Guessing"]
+    }
+  },
+  "agent": {
+    "id": "001",
+    "name": "soclab-ubuntu"
+  },
+  "data": {
+    "srcip": "192.168.1.50",
+    "dstuser": "soclab"
+  },
+  "full_log": "Failed password for soclab from 192.168.1.50 port 55115 ssh2",
+  "location": "/var/log/auth.log",
+  "decoder": {
+    "name": "sshd"
+  }
+}
