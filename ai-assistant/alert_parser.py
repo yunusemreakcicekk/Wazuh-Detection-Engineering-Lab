@@ -34,9 +34,20 @@ def safe_get(data: dict, path: str, default: str = "N/A"):
 
 
 def load_alert(file_path: str) -> dict:
-    """Load a Wazuh alert JSON file from disk."""
+    """
+    Load a Wazuh alert JSON file from disk.
+
+    Wazuh Dashboard's "View JSON" export wraps the actual alert fields
+    inside a top-level "_source" key (alongside _index/_id/_score
+    metadata). Unwrap it so the same field paths work whether the file
+    came from that export or is a plain alert object.
+    """
     with open(file_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        alert = json.load(f)
+
+    if isinstance(alert, dict) and "_source" in alert:
+        return alert["_source"]
+    return alert
 
 
 def parse_alert(alert: dict) -> dict:
