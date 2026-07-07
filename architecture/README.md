@@ -20,3 +20,8 @@ MITRE Mapping
 Incident Analysis
 ↓
 AI-Assisted Triage
+```
+
+Detection is performed entirely by Wazuh. The AI-assisted triage step only
+runs after Wazuh has already generated an alert - it explains the alert in
+plain language, it does not decide whether an alert fires.

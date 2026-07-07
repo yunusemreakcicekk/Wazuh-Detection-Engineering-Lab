@@ -18,7 +18,7 @@ a detection engine and it does **not** replace Wazuh.
 | `alert_parser.py` | Reads a Wazuh alert JSON and extracts the relevant fields. |
 | `airia_client.py` | Minimal client for calling the Airia AI API. |
 | `report_generator.py` | Builds a markdown incident summary (AI or local fallback). |
-| `config.example.py` | Template for Airia endpoint/model config. Copy to `config.py`. |
+| `config.example.py` | Template for the Airia endpoint URL. Copy to `config.py`. |
 | `sample_alert.json` | Sanitized example Wazuh alert (SSH brute force, rule 100200). |
 | `requirements.txt` | Python dependencies. |
 

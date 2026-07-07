@@ -69,6 +69,9 @@ walks through the full detection engineering process.
 
 ## Completed Rules
 
+See [`custom-rules/README.md`](custom-rules/README.md) for a field-by-field
+breakdown of each rule.
+
 | Rule ID | Description | MITRE ID | Level |
 |---|---|---|---|
 | [100200](custom-rules/100200.xml) | SSH Brute Force Attack Detected | T1110.001 | 12 |
@@ -101,7 +104,7 @@ Wazuh-Detection-Engineering-Lab/
 
 - Add more labs covering additional MITRE ATT&CK techniques
 - Expand custom rule set beyond SSH brute force
-- Add architecture diagrams and dashboard screenshots
+- Correlate source IP / username across alerts instead of single-rule detection
 - Improve AI-assisted analysis with more context per alert
 
 ## Disclaimer

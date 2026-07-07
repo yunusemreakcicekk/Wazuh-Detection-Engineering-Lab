@@ -1,6 +1,6 @@
 # T1110 - SSH Brute Force Detection Lab
 
-![MITRE ATT&CK](https://img.shields.io/badge/MITRE-T1110-red)
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE-T1110.001-red)
 ![Wazuh](https://img.shields.io/badge/Wazuh-4.x-blue)
 ![Status](https://img.shields.io/badge/Status-In_Progress-green)
 
@@ -11,8 +11,9 @@ The main focus of this lab is not only detecting failed SSH login attempts, but 
 
 ## Technique
 
-- MITRE ATT&CK ID: T1110
+- MITRE ATT&CK ID: T1110.001
 - Technique: Brute Force
+- Sub-technique: Password Guessing
 - Tactic: Credential Access
 - Scenario: SSH password guessing against an Ubuntu server
 
@@ -43,3 +44,15 @@ Custom Rule 100200
 MITRE ATT&CK Mapping
     ↓
 AI-Assisted Incident Analysis
+```
+
+## Documents in This Lab
+
+| Document | Covers |
+|---|---|
+| [attack.md](attack.md) | Attack simulation setup and password list |
+| [detection.md](detection.md) | Detection logic and custom rule walkthrough |
+| [mitre.md](mitre.md) | MITRE ATT&CK mapping and rationale |
+| [threshold-tuning.md](threshold-tuning.md) | Why `frequency=3`, `timeframe=60`, `level=12` were chosen |
+| [false-positive-analysis.md](false-positive-analysis.md) | Legitimate scenarios that could trigger this rule |
+| [ai-assisted-analysis.md](ai-assisted-analysis.md) | How the AI triage layer explains this alert |
