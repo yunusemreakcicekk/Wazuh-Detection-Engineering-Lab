@@ -30,6 +30,25 @@ def local_fallback_summary(parsed: dict) -> str:
     )
 
 
+def build_prompt(parsed: dict) -> str:
+    """Turn the parsed alert into a plain-language prompt for the Airia pipeline."""
+    return (
+        "Analyze this Wazuh security alert. Provide an Incident Summary, "
+        "Recommended Actions, and a Severity rating.\n\n"
+        f"Rule ID: {parsed['rule_id']}\n"
+        f"Description: {parsed['rule_description']}\n"
+        f"Level: {parsed['rule_level']}\n"
+        f"MITRE ATT&CK ID: {parsed['mitre_id']}\n"
+        f"MITRE Tactic: {parsed['mitre_tactic']}\n"
+        f"MITRE Technique: {parsed['mitre_technique']}\n"
+        f"Source IP: {parsed['src_ip']}\n"
+        f"Target User: {parsed['dst_user']}\n"
+        f"Agent: {parsed['agent_name']}\n"
+        f"Timestamp: {parsed['timestamp']}\n"
+        f"Raw Log: {parsed['full_log']}"
+    )
+
+
 def get_ai_summary(parsed: dict):
     """Try to get an AI-generated summary from Airia. Returns None on failure."""
     try:
@@ -38,7 +57,8 @@ def get_ai_summary(parsed: dict):
         print(f"[report_generator] AI client unavailable, using local fallback: {exc}")
         return None
 
-    return client.analyze_alert(parsed)
+    prompt = build_prompt(parsed)
+    return client.analyze_alert(prompt)
 
 
 def build_report(parsed: dict, ai_summary) -> str:

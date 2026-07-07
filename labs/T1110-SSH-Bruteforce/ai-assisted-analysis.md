@@ -130,3 +130,13 @@ AI is used only to improve incident understanding and triage efficiency.
 AI can improve the speed of incident triage by providing contextual explanations and investigation guidance.
 
 However, accurate detection still depends on well-designed detection rules and properly tuned thresholds.
+
+---
+
+# 🖼 Screenshots
+
+Real terminal output of `report_generator.py`, showing the live Airia AI response for the rule `100200` alert:
+
+![AI-assisted incident analysis output, part 1](../../screenshots/T1110-SSH-Bruteforce/05-ai-analysis-output-1.png)
+
+![AI-assisted incident analysis output, part 2](../../screenshots/T1110-SSH-Bruteforce/06-ai-analysis-output-2.png)

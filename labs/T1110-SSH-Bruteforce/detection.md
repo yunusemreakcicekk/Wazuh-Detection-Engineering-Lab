@@ -165,3 +165,19 @@ Future improvements may include:
 - MITRE ATT&CK T1110.001
 - Wazuh Documentation
 - OpenSSH Authentication Logs
+
+---
+
+# 🖼 Screenshots
+
+Custom rule definition (`custom-rules/100200.xml`):
+
+![Custom rule 100200](../../screenshots/T1110-SSH-Bruteforce/04-custom-rule-100200.png)
+
+Wazuh events overview showing the correlation from default rule `5760` to custom rule `100200`:
+
+![Wazuh events overview](../../screenshots/T1110-SSH-Bruteforce/02-wazuh-events-overview.png)
+
+Alert detail for the triggered `100200` alert:
+
+![Wazuh alert detail](../../screenshots/T1110-SSH-Bruteforce/03-wazuh-alert-detail.png)

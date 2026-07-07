@@ -42,3 +42,8 @@ test123
 qwerty123
 soc2024
 <correct-password>
+```
+
+## Screenshot
+
+![Hydra SSH brute force attack](../../screenshots/T1110-SSH-Bruteforce/01-hydra-attack.png)

@@ -7,8 +7,7 @@ is never stored here, it is only ever read from an environment
 variable (see airia_client.py).
 """
 
-# Placeholder endpoint - replace with your actual Airia deployment URL.
+# Per-agent Pipeline Execution URL from Airia:
+# Agent Studio -> Settings -> Interfaces -> View API Info.
+# The pipeline/model itself is baked into this URL, not passed in the request.
 AIRIA_API_ENDPOINT = "https://your-airia-endpoint.example/api"
-
-# Name of the model/pipeline configured in Airia for SOC playbook analysis.
-MODEL_NAME = "your-soc-playbook-model"
